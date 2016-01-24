@@ -1,10 +1,8 @@
-from melpy.core.Regressor import Regressor
-from melpy.validation.RegressionPrediction import RegressionPrediction
-from melpy.kernels.LinearKernel import LinearKernel
+from LinearKernel import LinearKernel
 import numpy as np
 import sklearn.cluster
 
-class StructNoiseSparseGPRegressor(Regressor):
+class StructNoiseSparseGPRegressor:
     
     learned_model=0
     kernels=0
@@ -27,7 +25,6 @@ class StructNoiseSparseGPRegressor(Regressor):
     B=0     # variance of q(X), size = N x R
     
     def __init__(self,inducing_kernel,kernels,num_inducing, max_iter, learnhyper=1, learn_sub_gps=1, learning_rate_start=1.):
-        Regressor.__init__(self,'GP-Stoch')
         
         self.R=len(kernels)
        
@@ -408,4 +405,4 @@ class StructNoiseSparseGPRegressor(Regressor):
       
       predictions = Vzx.T.dot(self.Vzz_inv).dot(self.m)
       
-      return RegressionPrediction(predictions); 
+      return predictions 

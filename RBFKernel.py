@@ -1,4 +1,3 @@
-from melpy.core.Kernel import Kernel
 import numpy as np
 import copy
 import scipy
@@ -6,7 +5,7 @@ import scipy
 #
 # exp(-0.5 ||x1-x2||_2^2 / (2*sqrt(length_scale)))
 #
-class RBFKernel(Kernel):
+class RBFKernel:
     
     length_scale=1.0
     featuremap=None

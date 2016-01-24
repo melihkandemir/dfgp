@@ -1,10 +1,9 @@
-from melpy.core.Kernel import Kernel
 import numpy as np
 import scipy
 #
 # exp(-0.5 ||x1-x2||_2^2 / (2*sqrt(length_scale)))
 #
-class LinearKernel(Kernel):
+class LinearKernel:
     
     scale=1.
     num_hyperparams=0
